@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping("/consumer")
 public class OrderController {
 
-    public static final String PAYMENT_URL = "http://localhost:8001";
+    public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
 
     @Autowired
     private RestTemplate restTemplate;
@@ -31,6 +31,11 @@ public class OrderController {
     @GetMapping("/payment/get/{id}")
     public Result<Payment> getPaymentById(@PathVariable("id") Long id){
         return restTemplate.getForObject(PAYMENT_URL + "/payment/get/" + id, Result.class); //调用服务端get请求就是getForObject
+    }
+
+    @GetMapping("/payment/discovery")
+    public Object getDiscovery(){
+        return restTemplate.getForObject(PAYMENT_URL + "/payment/discovery", Object.class);
     }
 
 }

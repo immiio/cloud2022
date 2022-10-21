@@ -3,10 +3,12 @@ server:
 
 eureka:
   instance:
-    hostname: localhost  #eureka服务端的实例名称
+    hostname: eureka7001.com  #eureka服务端的实例名称  不要和集群中的重名！
   client:
     register-with-eureka: false  #是否向注册中心注册自己（注册中心本身不用注册）
     fetch-registry: false  #是否从Eureka Server获取注册的服务信息
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://eureka7002.com:7002/eureka/
       #设置EurekaServer的访问地址，可以在此查询与Eureka Server交互的地址查询服务和注册服务
+      #集群中“相互注册，互相守望”。7001注册7002,7002注册7001
+      #单机版，自己注册自己即可

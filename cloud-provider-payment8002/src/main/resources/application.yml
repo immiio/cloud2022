@@ -1,5 +1,5 @@
 server:
-  port: 8001 # 微服务 一定要写服务端口号和微服务名称
+  port: 8002 # 微服务 一定要写服务端口号和微服务名称
 
 spring:
   application:
@@ -22,5 +22,5 @@ eureka:
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka  #入住地址 集群版
   instance:
-    instance-id: payment8001
-    prefer-ip-address: true   #访问路径可以显示ip地址
+    instance-id: payment8002
+    prefer-ip-address: true

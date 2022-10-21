@@ -1,6 +1,5 @@
 package com.uyyu.springcloud.controller;
 
-
 import com.uyyu.springcloud.entities.Payment;
 import com.uyyu.springcloud.entities.Result;
 import com.uyyu.springcloud.service.PaymentService;
