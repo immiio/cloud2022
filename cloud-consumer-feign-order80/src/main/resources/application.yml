@@ -1,0 +1,31 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-consumer-feign-order
+
+eureka:
+  client:
+    register-with-eureka: false # 客户端不是服务，无需向eureka注册，只需要获得注册服务即可
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka  #入住地址 集群版
+
+#feign:
+#  client:
+#    config:
+#      default:
+#        connectTimeout: 1000 #单位毫秒
+#        readTimeout: 1000 #单位毫秒
+
+#feign:
+#  client:
+#    config:
+#      CLOUD-PAYMENT-SERVICE: # 根据实际的需要替换成你自己的服务名
+#        connectTimeout: 1000 #单位毫秒
+#        readTimeout: 1000 #单位毫秒
+
+#logging:
+#  level:
+#    # feign日志以什么级别监控哪个接口
+#    com.uyyu.springcloud.service.PaymentFeignService: debug # 以debug的形式输出日志

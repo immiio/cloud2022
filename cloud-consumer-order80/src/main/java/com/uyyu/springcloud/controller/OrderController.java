@@ -4,6 +4,7 @@ import com.uyyu.springcloud.entities.Payment;
 import com.uyyu.springcloud.entities.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -38,4 +39,13 @@ public class OrderController {
         return restTemplate.getForObject(PAYMENT_URL + "/payment/discovery", Object.class);
     }
 
+    @GetMapping("/payment/get_entity/{id}")
+    public Result<Payment> getPaymentByIdEntity(@PathVariable("id") Long id){
+        ResponseEntity<Result> entity = restTemplate.getForEntity(PAYMENT_URL + "/payment/get/" + id, Result.class);
+        if(entity.getStatusCode().is2xxSuccessful()){
+            return entity.getBody();
+        }else {
+            return new Result<>(444,"操作失败");
+        }
+    }
 }
