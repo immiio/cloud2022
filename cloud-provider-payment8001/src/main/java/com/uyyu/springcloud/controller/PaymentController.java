@@ -69,6 +69,10 @@ public class PaymentController {
         return this.discoveryClient;
     }
 
+    /**
+     * 测试openFeign timeout
+     * @return
+     */
     @GetMapping("/feign/timeout")
     public String paymentFeignTimeout(){
         //暂停几秒线程

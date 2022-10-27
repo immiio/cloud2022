@@ -14,14 +14,7 @@ eureka:
 #feign:
 #  client:
 #    config:
-#      default:
-#        connectTimeout: 1000 #单位毫秒
-#        readTimeout: 1000 #单位毫秒
-
-#feign:
-#  client:
-#    config:
-#      CLOUD-PAYMENT-SERVICE: # 根据实际的需要替换成你自己的服务名
+#      default: # 可以根据实际的需要替换成你自己的服务名
 #        connectTimeout: 1000 #单位毫秒
 #        readTimeout: 1000 #单位毫秒
 
