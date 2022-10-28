@@ -18,7 +18,7 @@ eureka:
 #        connectTimeout: 1000 #单位毫秒
 #        readTimeout: 1000 #单位毫秒
 
-#logging:
-#  level:
-#    # feign日志以什么级别监控哪个接口
-#    com.uyyu.springcloud.service.PaymentFeignService: debug # 以debug的形式输出日志
+logging:
+  level:
+    # feign日志以什么级别监控哪个接口
+    com.uyyu.springcloud.service.PaymentFeignService: debug # 以debug的形式输出日志
